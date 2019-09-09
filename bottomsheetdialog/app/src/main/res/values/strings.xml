@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ScrollBottomSheet</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum varius feugiat risus, vel convallis dolor dictum in. Quisque interdum felis quis arcu sollicitudin consectetur. Sed vestibulum elit sed risus accumsan interdum. Sed tristique posuere dictum. Vivamus fringilla aliquam urna, at elementum nulla lobortis vel. Ut fermentum massa tellus, quis tincidunt erat eleifend ac. Etiam dapibus sodales facilisis.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </string>
+</resources>
