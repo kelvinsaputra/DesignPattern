@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingTop="0dp"
-    android:fitsSystemWindows="true"
-    android:id = "@+id/container"
+    android:id="@+id/container"
     tools:context=".FragmentBottomSheetDialog">
 
     <FrameLayout
         android:id="@+id/layoutBottomSheet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="fill_vertical"
-        android:background="@color/white"
-        app:behavior_hideable="true"
-        app:layout_behavior="@string/bottom_sheet_behavior">
+        android:background="@color/white">
 
         <ScrollView
             android:id="@+id/scroll_main"
@@ -32,20 +26,14 @@
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="300dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/preview" />
+                    android:src="@color/colorAccent" />
 
                 <TextView
-                    android:id="@+id/anchorTop"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/lipsum" />
-
-                <View
-                    android:id="@+id/anchor"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
             </LinearLayout>
         </ScrollView>
 
@@ -59,7 +47,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Patungan Untuk Berbagi"
+                android:text="@string/patungan_untuk_berbagi"
                 android:textSize="20sp" />
         </RelativeLayout>
 
@@ -76,7 +64,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Back" />
+            android:text="@string/back" />
     </RelativeLayout>
 
 </FrameLayout>
