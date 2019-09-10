@@ -35,7 +35,7 @@ class FragmentBottomSheetDialog : BottomSheetDialogFragment() {
 
 
         view.btnAnchorTop.setOnTouchListener(OnTouchListener { v, event ->
-            // v.parent.requestDisallowInterceptTouchEvent(true)
+            v.parent.requestDisallowInterceptTouchEvent(false)
             when (event.action and MotionEvent.ACTION_MASK) {
                 MotionEvent.ACTION_UP ->  Log.d("Touching", "AnchorTop")
             }
