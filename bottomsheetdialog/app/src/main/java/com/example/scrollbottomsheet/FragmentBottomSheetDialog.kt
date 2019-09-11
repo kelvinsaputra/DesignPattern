@@ -16,6 +16,10 @@ import kotlinx.android.synthetic.main.fragment_fragment_bottom_sheet_dialog.*
 import kotlinx.android.synthetic.main.fragment_fragment_bottom_sheet_dialog.view.*
 import android.view.MotionEvent
 import android.view.View.OnTouchListener
+import android.opengl.ETC1.getHeight
+import android.view.ViewTreeObserver
+
+
 
 
 
@@ -32,24 +36,9 @@ class FragmentBottomSheetDialog : BottomSheetDialogFragment() {
 
         val view =
             inflater.inflate(R.layout.fragment_fragment_bottom_sheet_dialog, container, false)
-
-
-        view.btnAnchorTop.setOnTouchListener(OnTouchListener { v, event ->
-            v.parent.requestDisallowInterceptTouchEvent(false)
-            when (event.action and MotionEvent.ACTION_MASK) {
-                MotionEvent.ACTION_UP ->  Log.d("Touching", "AnchorTop")
-            }
-            false
-        })
-        view.scroll_main.setOnTouchListener(OnTouchListener { v, event ->
-            v.parent.requestDisallowInterceptTouchEvent(true)
-            when (event.action and MotionEvent.ACTION_MASK) {
-                MotionEvent.ACTION_UP -> v.parent.requestDisallowInterceptTouchEvent(false)
-            }
-            false
-        })
         return view
     }
+
 
 
 
@@ -74,10 +63,22 @@ class FragmentBottomSheetDialog : BottomSheetDialogFragment() {
             bottomSheetBehavior.skipCollapsed = true
             bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
 
+            containerLayout.scroll_main.getViewTreeObserver()
+                .addOnScrollChangedListener(ViewTreeObserver.OnScrollChangedListener {
+                    if (!containerLayout.scroll_main.canScrollVertically(1)) {
+                        containerLayout.scroll_main.setOnTouchListener(OnTouchListener { v, event ->
+                            v.parent.requestDisallowInterceptTouchEvent(true)
 
-
-            //parent.requestDisallowInterceptTouchEvent(true)
-
+                            false
+                        })
+                    }
+                    if (!containerLayout.scroll_main.canScrollVertically(-1)) {
+                        containerLayout.scroll_main.setOnTouchListener(OnTouchListener { v, event ->
+                            v.parent.requestDisallowInterceptTouchEvent(false)
+                            false
+                        })
+                    }
+                })
         }
         return bottomSheetDialog
     }
