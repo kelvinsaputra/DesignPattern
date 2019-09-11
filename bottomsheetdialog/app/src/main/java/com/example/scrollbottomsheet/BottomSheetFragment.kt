@@ -26,8 +26,10 @@ class BottomSheetFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val view = layoutInflater.inflate(R.layout.fragment_fragment_bottom_sheet_dialog, null)
+        // TO Instance FragmentBottomSheetDialog
         val bottomSheetFragment = FragmentBottomSheetDialog()
         btnShow.setOnClickListener{
+            // TO Show FragmentBottomSheetDialog
             bottomSheetFragment.show(fragmentManager!!, bottomSheetFragment.tag)
         }
     }

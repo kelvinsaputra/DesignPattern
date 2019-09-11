@@ -16,6 +16,10 @@ import kotlinx.android.synthetic.main.fragment_fragment_bottom_sheet_dialog.*
 import kotlinx.android.synthetic.main.fragment_fragment_bottom_sheet_dialog.view.*
 import android.view.MotionEvent
 import android.view.View.OnTouchListener
+import android.opengl.ETC1.getHeight
+import android.view.ViewTreeObserver
+
+
 
 
 
@@ -32,31 +36,17 @@ class FragmentBottomSheetDialog : BottomSheetDialogFragment() {
 
         val view =
             inflater.inflate(R.layout.fragment_fragment_bottom_sheet_dialog, container, false)
-
-
-        view.btnAnchorTop.setOnTouchListener(OnTouchListener { v, event ->
-            // v.parent.requestDisallowInterceptTouchEvent(true)
-            when (event.action and MotionEvent.ACTION_MASK) {
-                MotionEvent.ACTION_UP ->  Log.d("Touching", "AnchorTop")
-            }
-            false
-        })
-        view.scroll_main.setOnTouchListener(OnTouchListener { v, event ->
-            v.parent.requestDisallowInterceptTouchEvent(true)
-            when (event.action and MotionEvent.ACTION_MASK) {
-                MotionEvent.ACTION_UP -> v.parent.requestDisallowInterceptTouchEvent(false)
-            }
-            false
-        })
         return view
     }
 
 
 
-    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        //create dialog
         val bottomSheetDialog = super.onCreateDialog(savedInstanceState) as BottomSheetDialog
         bottomSheetDialog.setOnShowListener {
+            //To Anchor View Bottom
             val dialog = it as BottomSheetDialog
             dialog.findViewById<FrameLayout>(com.google.android.material.R.id.design_bottom_sheet) as FrameLayout
             val containerLayout: FrameLayout =
@@ -67,17 +57,24 @@ class FragmentBottomSheetDialog : BottomSheetDialogFragment() {
             parent.removeView(button)
             containerLayout.addView(button, containerLayout.childCount)
 
-
-
+            //To Expand Dialog when dialog showed
             val bottomSheet = dialog.findViewById<View>(R.id.design_bottom_sheet) as FrameLayout
             val bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
             bottomSheetBehavior.skipCollapsed = true
             bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
 
-
-
-            //parent.requestDisallowInterceptTouchEvent(true)
-
+            //To Make NestedScrollview as main concern and drag down when reach the top
+            containerLayout.scroll_main.getViewTreeObserver()
+                .addOnScrollChangedListener(ViewTreeObserver.OnScrollChangedListener {
+                    //When Scroll view reach the bottom
+                    if (!containerLayout.scroll_main.canScrollVertically(1)) {
+                        containerLayout.parent.requestDisallowInterceptTouchEvent(true)
+                    }
+                    //When Scroll view reach the top
+                    if (!containerLayout.scroll_main.canScrollVertically(-1)) {
+                        containerLayout.parent.requestDisallowInterceptTouchEvent(false)
+                    }
+                })
         }
         return bottomSheetDialog
     }

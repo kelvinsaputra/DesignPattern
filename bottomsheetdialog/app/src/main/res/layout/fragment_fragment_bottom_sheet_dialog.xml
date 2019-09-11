@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:background="@color/white">
 
-        <ScrollView
+        <androidx.core.widget.NestedScrollView
             android:id="@+id/scroll_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -35,12 +35,13 @@
                     android:layout_height="wrap_content"
                     android:text="@string/lipsum" />
             </LinearLayout>
-        </ScrollView>
+        </androidx.core.widget.NestedScrollView>
 
         <RelativeLayout
+            android:clickable="true"
             android:id="@+id/btnAnchorTop"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_gravity="top"
             android:background="@color/white">
 
