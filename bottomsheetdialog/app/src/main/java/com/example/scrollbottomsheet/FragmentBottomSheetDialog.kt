@@ -57,7 +57,6 @@ class FragmentBottomSheetDialog : BottomSheetDialogFragment() {
             containerLayout.addView(button, containerLayout.childCount)
 
 
-
             val bottomSheet = dialog.findViewById<View>(R.id.design_bottom_sheet) as FrameLayout
             val bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
             bottomSheetBehavior.skipCollapsed = true
@@ -68,7 +67,12 @@ class FragmentBottomSheetDialog : BottomSheetDialogFragment() {
                     if (!containerLayout.scroll_main.canScrollVertically(1)) {
                         containerLayout.scroll_main.setOnTouchListener(OnTouchListener { v, event ->
                             v.parent.requestDisallowInterceptTouchEvent(true)
-
+                            when(event.action){
+                                MotionEvent.ACTION_MOVE-> {
+                                    v.parent.requestDisallowInterceptTouchEvent(false)
+                                }
+                            }
+                            Log.d("Touching", "Bottom")
                             false
                         })
                     }
