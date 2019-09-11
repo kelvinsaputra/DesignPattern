@@ -43,9 +43,10 @@ class FragmentBottomSheetDialog : BottomSheetDialogFragment() {
 
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-
+        //create dialog
         val bottomSheetDialog = super.onCreateDialog(savedInstanceState) as BottomSheetDialog
         bottomSheetDialog.setOnShowListener {
+            //To Anchor View Bottom
             val dialog = it as BottomSheetDialog
             dialog.findViewById<FrameLayout>(com.google.android.material.R.id.design_bottom_sheet) as FrameLayout
             val containerLayout: FrameLayout =
@@ -56,31 +57,22 @@ class FragmentBottomSheetDialog : BottomSheetDialogFragment() {
             parent.removeView(button)
             containerLayout.addView(button, containerLayout.childCount)
 
-
+            //To Expand Dialog when dialog showed
             val bottomSheet = dialog.findViewById<View>(R.id.design_bottom_sheet) as FrameLayout
             val bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
             bottomSheetBehavior.skipCollapsed = true
             bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
 
+            //To Make NestedScrollview as main concern and drag down when reach the top
             containerLayout.scroll_main.getViewTreeObserver()
                 .addOnScrollChangedListener(ViewTreeObserver.OnScrollChangedListener {
+                    //When Scroll view reach the bottom
                     if (!containerLayout.scroll_main.canScrollVertically(1)) {
-                        containerLayout.scroll_main.setOnTouchListener(OnTouchListener { v, event ->
-                            v.parent.requestDisallowInterceptTouchEvent(true)
-                            when(event.action){
-                                MotionEvent.ACTION_MOVE-> {
-                                    v.parent.requestDisallowInterceptTouchEvent(false)
-                                }
-                            }
-                            Log.d("Touching", "Bottom")
-                            false
-                        })
+                        containerLayout.parent.requestDisallowInterceptTouchEvent(true)
                     }
+                    //When Scroll view reach the top
                     if (!containerLayout.scroll_main.canScrollVertically(-1)) {
-                        containerLayout.scroll_main.setOnTouchListener(OnTouchListener { v, event ->
-                            v.parent.requestDisallowInterceptTouchEvent(false)
-                            false
-                        })
+                        containerLayout.parent.requestDisallowInterceptTouchEvent(false)
                     }
                 })
         }
