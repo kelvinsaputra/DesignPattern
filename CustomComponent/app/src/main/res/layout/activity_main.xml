@@ -7,17 +7,17 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.elyeproj.myapplication.CustomComponent
+    <com.example.customcomponent.CustomComponent
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:custom_component_title="@string/component_one" />
 
-    <com.elyeproj.myapplication.CustomComponent
+    <com.example.customcomponent.CustomComponent
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:custom_component_title="@string/component_two" />
 
-    <com.elyeproj.myapplication.CustomComponent
+    <com.example.customcomponent.CustomComponent
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:custom_component_title="@string/component_three" />
