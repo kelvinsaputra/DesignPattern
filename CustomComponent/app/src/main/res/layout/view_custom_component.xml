@@ -10,7 +10,9 @@
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:background="@drawable/custom_background"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        card_view:cardCornerRadius="5dp"
+        card_view:contentPadding="5dp">
 
         <RelativeLayout
             android:id="@+id/layoutButtons"
@@ -22,32 +24,32 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/image"
+            android:id="@+id/layoutContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/productImage"
+            <RelativeLayout
+                android:id="@+id/image"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:src="@drawable/fossil"></ImageView>
-        </RelativeLayout>
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/productImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/fossil">
+                </ImageView>
+            </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/layoutContent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/image"
-            android:padding="5dp">
             <TextView
                 android:id="@+id/shopName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:layout_below="@id/image"
                 android:padding="5dp"
+                android:text="@string/shopName"
                 android:textSize="10pt"
-                android:text="@string/shopName">
+                android:textStyle="bold">
             </TextView>
 
             <TextView
@@ -56,8 +58,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/shopName"
                 android:padding="5dp"
-                android:textSize="20pt"
-                android:text="@string/productName">
+                android:text="@string/productName"
+                android:textSize="18pt">
             </TextView>
 
             <TextView
@@ -68,21 +70,21 @@
                 android:background="@drawable/discountbackground"
                 android:padding="5dp"
                 android:text="@string/discount"
-                android:textStyle="bold"
+                android:textColor="#FF98B1"
                 android:textSize="10pt"
-                android:textColor="#FF98B1">
+                android:textStyle="bold">
             </TextView>
 
             <TextView
                 android:id="@+id/originalPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/discount"
                 android:layout_below="@+id/productName"
-                android:padding="5dp"
-                android:textSize="10pt"
                 android:layout_marginLeft="5dp"
-                android:text="@string/originalPrice">
+                android:layout_toRightOf="@+id/discount"
+                android:padding="5dp"
+                android:text="@string/originalPrice"
+                android:textSize="10pt">
             </TextView>
 
             <TextView
@@ -91,11 +93,12 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/discount"
                 android:padding="5dp"
-                android:textSize="20pt"
-                android:textStyle="bold"
                 android:text="@string/discountedPrice"
-                android:textColor="#FA5A1C">
+                android:textColor="#FA5A1C"
+                android:textSize="18pt"
+                android:textStyle="bold">
             </TextView>
+
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
