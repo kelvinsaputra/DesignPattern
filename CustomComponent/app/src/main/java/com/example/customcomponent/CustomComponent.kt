@@ -26,11 +26,24 @@ class CustomComponent @JvmOverloads constructor(
         orientation = VERTICAL
 
         attrs?.let {
-            val productArray = context.obtainStyledAttributes(it, R.styleable.custom_component_attributes, 0, 0)
-            val shopTitle = resources.getText(productArray
-                .getResourceId(R.styleable.custom_component_attributes_custom_component_title, R.string.shopName))
 
-            shopName.text = shopTitle
+            val productArray = context.obtainStyledAttributes(it, R.styleable.custom_component_attributes, 0, 0)
+            val text_shopName = resources.getText(productArray
+                .getResourceId(R.styleable.custom_component_attributes_custom_component_title, R.string.shopName))
+            val text_productName = resources.getText(productArray
+                .getResourceId(R.styleable.custom_component_attributes_custom_component_title, R.string.productName))
+            val text_discount = resources.getText(productArray
+                .getResourceId(R.styleable.custom_component_attributes_custom_component_title, R.string.discount))
+            val text_oriPrice = resources.getText(productArray
+                .getResourceId(R.styleable.custom_component_attributes_custom_component_title, R.string.originalPrice))
+            val text_discountedPrice = resources.getText(productArray
+                .getResourceId(R.styleable.custom_component_attributes_custom_component_title, R.string.discountedPrice))
+
+            shopName.text = text_shopName
+            productName.text = text_productName
+            discount.text = text_discount
+            originalPrice.text = text_oriPrice
+            discountedPrice.text = text_discountedPrice
 
             productArray.recycle()
 
