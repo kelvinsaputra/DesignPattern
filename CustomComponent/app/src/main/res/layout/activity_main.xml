@@ -9,16 +9,6 @@
 
     <com.example.customcomponent.CustomComponent
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:custom_component_title="@string/component_one" />
+        android:layout_height="wrap_content" />
 
-    <com.example.customcomponent.CustomComponent
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:custom_component_title="@string/component_two" />
-
-    <com.example.customcomponent.CustomComponent
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:custom_component_title="@string/component_three" />
 </LinearLayout>
