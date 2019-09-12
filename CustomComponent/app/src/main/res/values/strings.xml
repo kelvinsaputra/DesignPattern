@@ -1,4 +1,5 @@
 <resources>
+    <string name="app_name">CostumComponent</string>
     <string name="shopName">Fossil Indonesia</string>
     <string name="productName">Jam Tangan Fossil with Leather Strap</string>
     <string name="discount">20%</string>
