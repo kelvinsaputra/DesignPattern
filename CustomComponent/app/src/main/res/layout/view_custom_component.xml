@@ -8,25 +8,17 @@
 
     <androidx.cardview.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:background="@drawable/custom_background"
+        android:id="@+id/card"
+        android:background="#FFFFFF"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        card_view:cardCornerRadius="5dp"
-        card_view:contentPadding="5dp">
-
-        <RelativeLayout
-            android:id="@+id/layoutButtons"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:background="@android:color/background_dark"
-            android:visibility="gone">
-        </RelativeLayout>
+        card_view:cardCornerRadius="20dp">
 
         <RelativeLayout
             android:id="@+id/layoutContent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="5dp">
 
             <RelativeLayout
                 android:id="@+id/image"
@@ -48,7 +40,7 @@
                 android:layout_below="@id/image"
                 android:padding="5dp"
                 android:text="@string/shopName"
-                android:textSize="10pt"
+                android:textSize="20sp"
                 android:textStyle="bold">
             </TextView>
 
@@ -59,7 +51,7 @@
                 android:layout_below="@id/shopName"
                 android:padding="5dp"
                 android:text="@string/productName"
-                android:textSize="18pt">
+                android:textSize="28sp">
             </TextView>
 
             <TextView
@@ -71,7 +63,7 @@
                 android:padding="5dp"
                 android:text="@string/discount"
                 android:textColor="#FF98B1"
-                android:textSize="10pt"
+                android:textSize="20sp"
                 android:textStyle="bold">
             </TextView>
 
@@ -84,7 +76,7 @@
                 android:layout_toRightOf="@+id/discount"
                 android:padding="5dp"
                 android:text="@string/originalPrice"
-                android:textSize="10pt">
+                android:textSize="20sp">
             </TextView>
 
             <TextView
@@ -95,10 +87,19 @@
                 android:padding="5dp"
                 android:text="@string/discountedPrice"
                 android:textColor="#FA5A1C"
-                android:textSize="18pt"
+                android:textSize="28sp"
                 android:textStyle="bold">
             </TextView>
 
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layoutButtons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="#597A7878"
+            android:visibility="gone">
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>

@@ -47,7 +47,7 @@ class CustomComponent @JvmOverloads constructor(
 
             productArray.recycle()
 
-            shopName.setOnTouchListener { v, event ->
+            card.setOnTouchListener { v, event ->
                 when (event.action) {
                     MotionEvent.ACTION_DOWN -> {
                         val x = layoutContent.getRight()
