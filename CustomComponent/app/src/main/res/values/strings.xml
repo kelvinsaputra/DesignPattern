@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">CustomComponent</string>
-    <string name="component_one">Custom Component 1</string>
-    <string name="component_two">Custom Component 2</string>
-    <string name="component_three">Custom Component 3</string>
-    <string name="hint_text">Type something for</string>
+    <string name="shopName">Fossil Indonesia</string>
+    <string name="productName">Jam Tangan Fossil with Leather Strap</string>
+    <string name="discount">20%</string>
+    <string name="originalPrice"><strike>Rp6.000.000</strike></string>
+    <string name="discountedPrice">Rp5.600.000</string>
 </resources>

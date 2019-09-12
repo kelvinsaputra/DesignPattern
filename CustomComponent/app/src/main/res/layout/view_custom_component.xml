@@ -3,29 +3,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/my_title"
-        style="@style/custom_component_title"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/my_edit"
-            android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+        <ImageView
+            android:id="@+id/productImage"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <android.widget.Switch
-            android:id="@+id/my_switch"
+            android:layout_alignParentTop="true">
+        </ImageView>
+        <TextView
+            android:id="@+id/shopName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/productImage"
+            android:text="@string/shopName">
+        </TextView>
+        <TextView
+            android:id="@+id/productName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shopName"
+            android:text="@string/productName">
+        </TextView>
+        <TextView
+            android:id="@+id/discount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end|center"
-            android:layout_marginTop="6dp" />
-    </LinearLayout>
+            android:layout_below="@+id/productName"
+            android:background="#FFEAEF"
+            android:textColor="#FF98B1"
+            android:text="@string/discount">
+        </TextView>
+        <TextView
+            android:id="@+id/originalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/discount"
+            android:text="@string/originalPrice">
+        </TextView>
+        <TextView
+            android:id="@+id/discountedPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/originalPrice"
+            android:textColor="#FA5A1C"
+            android:text="@string/discountedPrice">
+        </TextView>
+
+
+    </RelativeLayout>
+
+
 
 </merge>
