@@ -10,9 +10,10 @@
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card"
         android:background="#FFFFFF"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        card_view:cardCornerRadius="20dp">
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="20dp"
+        android:padding="8dp">
 
         <RelativeLayout
             android:id="@+id/layoutContent"
