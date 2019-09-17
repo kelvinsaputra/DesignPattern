@@ -48,5 +48,35 @@ class MainActivity : AppCompatActivity(), MyRecyclerViewAdapter.ItemClickListene
             MyRecyclerViewAdapter(this, menuCreational)
         adapterCreational.setClickListener(this)
         recyclerViewCreational.adapter = adapterCreational
+
+
+
+        val recyclerViewStructural = findViewById<RecyclerView>(R.id.recycler_structural)
+        val layoutManagerStructural = LinearLayoutManager(this)
+        recyclerViewStructural.layoutManager = layoutManagerStructural
+        val dividerItemDecorationStructural = DividerItemDecoration(
+            recyclerViewStructural.context,
+            layoutManagerStructural.orientation
+        )
+        recyclerViewStructural.addItemDecoration(dividerItemDecorationStructural)
+        val adapterStructural =
+            MyRecyclerViewAdapter(this, menuStructural)
+        adapterStructural.setClickListener(this)
+        recyclerViewStructural.adapter = adapterStructural
+
+
+
+        val recyclerViewBehaviour = findViewById<RecyclerView>(R.id.recycler_behaviour)
+        val layoutManagerBehaviour= LinearLayoutManager(this)
+        recyclerViewBehaviour.layoutManager = layoutManagerBehaviour
+        val dividerItemDecorationBehaviour = DividerItemDecoration(
+            recyclerViewStructural.context,
+            layoutManagerStructural.orientation
+        )
+        recyclerViewBehaviour.addItemDecoration(dividerItemDecorationBehaviour)
+        val adapterBehaviour =
+            MyRecyclerViewAdapter(this, menuBehavioral)
+        adapterBehaviour.setClickListener(this)
+        recyclerViewBehaviour.adapter = adapterBehaviour
     }
 }
