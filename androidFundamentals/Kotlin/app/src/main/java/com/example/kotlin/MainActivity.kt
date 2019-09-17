@@ -6,6 +6,7 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.example.kotlin.Coroutine.CoroutineActivity
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -23,7 +24,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         btn_coroutine.setOnClickListener {
-
+            val intent = Intent(this@MainActivity, CoroutineActivity::class.java)
+            startActivity(intent)
         }
     }
 
