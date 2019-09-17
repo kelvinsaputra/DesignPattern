@@ -7,9 +7,6 @@ This is a sample application that implements the `Abstract Factory` Creational D
 - cheapPen
 - cheapPencil
 
-##### Methods
-`write()`
-
 #### Second Product: Expensive Stationary
 - expensiveHighlighter
 - expensivePen 
