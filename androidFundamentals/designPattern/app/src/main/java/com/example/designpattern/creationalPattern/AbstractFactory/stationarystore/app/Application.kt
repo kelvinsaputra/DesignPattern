@@ -1,8 +1,8 @@
 package com.example.stationarystore.app
 
-import com.example.stationarystore.CheapStationary.cheapStationary
-import com.example.stationarystore.ExpensiveStationary.expensiveStationary
-import com.example.stationarystore.factories.stationaryFactory
+import com.example.designpattern.creationalPattern.AbstractFactory.stationarystore.CheapStationary.cheapStationary
+import com.example.designpattern.creationalPattern.AbstractFactory.stationarystore.ExpensiveStationary.expensiveStationary
+import com.example.designpattern.creationalPattern.AbstractFactory.stationarystore.factories.stationaryFactory
 
 class Application(factory: stationaryFactory) {
     private val cheapstationary: cheapStationary = factory.createCheapStationary()
@@ -11,7 +11,7 @@ class Application(factory: stationaryFactory) {
     fun write(): String {
         val cheapStationary = cheapstationary.write()
         val expensiveStationary = expensivestationary.write()
-        return "$cheapStationary $expensiveStationary"
+        return "We have a " + cheapStationary + " and a " + expensiveStationary
     }
 
 }

@@ -1,9 +1,9 @@
-package com.example.stationarystore.factories
+package com.example.designpattern.creationalPattern.AbstractFactory.stationarystore.factories
 
-import com.example.stationarystore.CheapStationary.cheapHighlighter
-import com.example.stationarystore.CheapStationary.cheapStationary
-import com.example.stationarystore.ExpensiveStationary.expensiveHighlighter
-import com.example.stationarystore.ExpensiveStationary.expensiveStationary
+import com.example.designpattern.creationalPattern.AbstractFactory.stationarystore.CheapStationary.cheapHighlighter
+import com.example.designpattern.creationalPattern.AbstractFactory.stationarystore.CheapStationary.cheapStationary
+import com.example.designpattern.creationalPattern.AbstractFactory.stationarystore.ExpensiveStationary.expensiveHighlighter
+import com.example.designpattern.creationalPattern.AbstractFactory.stationarystore.ExpensiveStationary.expensiveStationary
 
 class highlighterFactory : stationaryFactory {
 

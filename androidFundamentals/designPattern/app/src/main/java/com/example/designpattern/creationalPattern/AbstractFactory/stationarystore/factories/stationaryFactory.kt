@@ -1,7 +1,7 @@
-package com.example.stationarystore.factories
+package com.example.designpattern.creationalPattern.AbstractFactory.stationarystore.factories
 
-import com.example.stationarystore.CheapStationary.cheapStationary
-import com.example.stationarystore.ExpensiveStationary.expensiveStationary
+import com.example.designpattern.creationalPattern.AbstractFactory.stationarystore.CheapStationary.cheapStationary
+import com.example.designpattern.creationalPattern.AbstractFactory.stationarystore.ExpensiveStationary.expensiveStationary
 
 interface stationaryFactory {
     fun createCheapStationary(): cheapStationary

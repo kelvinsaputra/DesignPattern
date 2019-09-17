@@ -1,9 +1,9 @@
-package com.example.stationarystore.factories
+package com.example.designpattern.creationalPattern.AbstractFactory.stationarystore.factories
 
-import com.example.stationarystore.CheapStationary.cheapPen
-import com.example.stationarystore.CheapStationary.cheapStationary
-import com.example.stationarystore.ExpensiveStationary.expensivePen
-import com.example.stationarystore.ExpensiveStationary.expensiveStationary
+import com.example.designpattern.creationalPattern.AbstractFactory.stationarystore.CheapStationary.cheapPen
+import com.example.designpattern.creationalPattern.AbstractFactory.stationarystore.CheapStationary.cheapStationary
+import com.example.designpattern.creationalPattern.AbstractFactory.stationarystore.ExpensiveStationary.expensivePen
+import com.example.designpattern.creationalPattern.AbstractFactory.stationarystore.ExpensiveStationary.expensiveStationary
 
 class penFactory : stationaryFactory {
 

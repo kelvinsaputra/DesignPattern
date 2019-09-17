@@ -1,17 +1,14 @@
-package com.example.stationarystore
+package com.example.designpattern.creationalPattern.AbstractFactory.stationarystore
 
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.example.designpattern.R
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class StationaryStoreActivity: AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.abstract_factory)
@@ -31,8 +28,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         if (order === " ") {
             Toast.makeText(this, "Please enter an order", Toast.LENGTH_SHORT).show()
         } else {
-            val res = Demo.main(order)
-            showPopup(res)
+            showPopup(order)
         }
     }
 
@@ -44,11 +40,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val inflater = layoutInflater
         var popupView = inflater.inflate(R.layout.abstract_factory_popup, null)
         popup.setView(popupView)
-        val imageContent = popupView.findViewById<View>(R.id.imageLayout)
+        val imgContent = popupView.findViewById<View>(R.id.imageLayout)
+        val img = imgContent.findViewById<ImageView>(R.id.image)
+        val res = Demo.main(order,img)
         val content = popupView.findViewById<View>(R.id.content)
         itemDetails = content.findViewById(R.id.itemDetails)
         exit = content.findViewById(R.id.exit)
-        itemDetails.text = order
+        itemDetails.text = res
         val dialog = popup.create()
         exit.setOnClickListener { dialog.dismiss() }
         dialog.show()

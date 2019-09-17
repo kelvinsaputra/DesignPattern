@@ -3,12 +3,15 @@ package com.example.designpattern
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.designpattern.creationalPattern.AbstractFactory.stationarystore.StationaryStoreActivity
+import kotlinx.android.synthetic.main.activity_main.*
 import com.example.designpattern.behavioralPattern.ObserverPattern.ObserverActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import android.view.View
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+
 
 class MainActivity : AppCompatActivity(), MyRecyclerViewAdapter.ItemClickListener{
     override fun onItemClick(view: View, position: Int) {
@@ -27,6 +30,7 @@ class MainActivity : AppCompatActivity(), MyRecyclerViewAdapter.ItemClickListene
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         val menuCreational = ArrayList<String>()
         menuCreational.add("Pattern C1")

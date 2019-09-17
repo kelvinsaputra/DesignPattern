@@ -1,4 +1,4 @@
-package com.example.stationarystore.CheapStationary
+package com.example.designpattern.creationalPattern.AbstractFactory.stationarystore.CheapStationary
 
 class cheapPencil : cheapStationary {
 
